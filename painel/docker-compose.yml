@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  wordpress:
+    container_name: apeoc-web
+    image: wordpress
+    links:
+     - mysql
+    environment:
+     - WORDPRESS_DB_PASSWORD=senha123
+    ports:
+     - "8000:80"
+    volumes:
+     - ./:/var/www/html
+  mysql:
+    container_name: apeoc-db
+    image: mysql:5.7
+    environment:
+     - MYSQL_ROOT_PASSWORD=senha123
+     - MYSQL_DATABASE=wordpress
+    volumes:
+     - ./db:/var/lib/mysql
