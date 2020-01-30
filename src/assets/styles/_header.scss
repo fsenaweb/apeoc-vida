@@ -1,0 +1,17 @@
+.container-topo {
+  width: 100%;
+  height: 100px;
+  background-color: #FFF;
+  margin: 0 auto;
+  box-shadow: 0 2px 1px #bec0c5;
+}
+
+.link-menu > a {
+  font-weight: 700;
+  color: #000;
+  transition: color .3s linear;
+
+  &:hover {
+    color: #761f20
+  }
+}
