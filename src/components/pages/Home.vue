@@ -1,12 +1,17 @@
-<script src="../../main.js"></script>
 <template>
-    <div class="container vh-100">
+    <div class="container vh-100 mb-5">
         <div class="row mb-2">
             <div class="col-7 mr-4">
                 <div class="topicos">
                     <h1> [ Informativo ] </h1>
                 </div>
-                <img src="http://lorempixel.com/740/480/people" class="img-fluid" alt="">
+                <div class="noticias">
+                    <img src="http://lorempixel.com/740/480/sports" class="img-fluid" alt="">
+                    <div class="titulo p-3">
+                        <h4>Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí
+                            cumpadi</h4>
+                    </div>
+                </div>
             </div>
             <div class="col-4">
                 <div class="topicos">
@@ -28,11 +33,46 @@
                 </div>
             </div>
         </div>
+        <div class="row mb-3">
+            <div class="col-7 mr-4">
+                <div class="row mt-3 pl-1">
+                    <div class="col-6">
+                        <div class="noticias-sub">
+                            <img src="http://lorempixel.com/335/180/sports" class="img-fluid" alt="">
+                            <div class="titulo p-1">
+                                <div>Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí
+                                    cumpadi
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="noticias-sub">
+                            <img src="http://lorempixel.com/335/180/sports" class="img-fluid" alt="">
+                            <div class="titulo p-1">
+                                <div>Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí
+                                    cumpadi
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4">
+                <Phone />
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+    import Phone from '@/components/utils/Phone'
+
     export default {
-        name: 'Home'
+        name: 'Home',
+        components: {
+            Phone
+        }
     }
 </script>
