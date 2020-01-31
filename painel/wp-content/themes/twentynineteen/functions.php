@@ -449,9 +449,9 @@ function seguradora_post_type() {
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'Seguradora' ),
+		'rewrite'            => array( 'slug' => 'seguradora' ),
 		'show_in_rest'       => true,
-		'rest_base'          => 'Seguradora',
+		'rest_base'          => 'seguradora',
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
@@ -496,7 +496,7 @@ function sorteios_post_type() {
 		'hierarchical'       => false,
 		'menu_position'      => 4,
 		'menu_icon'          => 'dashicons-book-alt',
-		'supports'           => false
+		'supports'           => array('title')
 	);
 	register_post_type( 'sorteios', $args);
 }

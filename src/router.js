@@ -3,6 +3,13 @@ import VueRouter from 'vue-router'
 
 import Home from "./components/pages/Home";
 import Produto from "./components/pages/Produto";
+import Coberturas from "./components/pages/Coberturas";
+import Morte from "./components/pages/coberturas/Morte";
+import Invalidez from "./components/pages/coberturas/Invalidez";
+import Cancer from "./components/pages/coberturas/Cancer";
+import Funeral from "./components/pages/coberturas/Funeral";
+import Sorteio from "./components/pages/coberturas/Sorteio";
+import Seguradora from "./components/pages/Seguradora";
 
 Vue.use(VueRouter)
 
@@ -15,6 +22,37 @@ const router = new VueRouter({
         {
             path: '/produto',
             component: Produto
+        },
+        {
+            path: '/seguradora',
+            component: Seguradora
+        },
+        {
+            name: 'Coberturas',
+            path: '/coberturas',
+            component: Coberturas,
+            children: [
+                {
+                    path: 'morte-qualquer-causa',
+                    component: Morte
+                },
+                {
+                    path: 'invalidez',
+                    component: Invalidez
+                },
+                {
+                    path: 'cancer',
+                    component: Cancer
+                },
+                {
+                    path: 'funeral',
+                    component: Funeral
+                },
+                {
+                    path: 'sorteio',
+                    component: Sorteio
+                },
+            ]
         }
     ]
 });
