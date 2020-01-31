@@ -321,3 +321,261 @@ require get_template_directory() . '/inc/template-tags.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+// LIBERAR CORS
+function add_cors_http_header(){
+	header("Access-Control-Allow-Origin: *");
+}
+add_action('init','add_cors_http_header');
+
+// Customizar o Footer do WordPress
+function remove_footer_admin () {
+	echo '© <a href="https://fsenaweb.me/">Fsenaweb.me</a> - Desenvolvimento de sites e sistemas para internet.';
+}
+add_filter('admin_footer_text', 'remove_footer_admin');
+
+function remover_boxes() {
+	remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+	remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+	remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');
+	remove_meta_box('dashboard_plugins', 'dashboard', 'normal');
+	remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+	remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');
+	remove_meta_box('dashboard_primary', 'dashboard', 'side');
+	remove_meta_box('dashboard_secondary', 'dashboard', 'side');
+}
+add_action( 'admin_menu' , 'remover_boxes' );
+
+function produtos_post_type() {
+	$labels = array(
+		'name'               => __('Produto'),
+		'singular_name'      => __('Produto'),
+		'menu_name'          => __('Produtos'),
+		'name_admin_bar'     => __('Produtos'),
+		'add_new'            => __('Novos produtos'),
+		'add_new_item'       => __('Adicionar novo produto'),
+		'new_item'           => __('Novo produto'),
+		'edit_item'          => __('Editar produto'),
+		'view_item'          => __('Visualizar produto'),
+		'all_items'          => __('Todos os produtos'),
+		'search_items'       => __('Localizar produto'),
+		'not_found'          => __('Nenhum produto encontrado'),
+		'not_found_in_trash' => __('Nenhum produto encontrado na lixeira')
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __('Descrição'),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'produtos' ),
+		'show_in_rest'       => true,
+		'rest_base'          => 'produtos',
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 6,
+		'menu_icon'          => 'dashicons-format-aside',
+		'supports'           => array('editor')
+	);
+	register_post_type( 'produtos', $args);
+}
+add_action( 'init', 'produtos_post_type' );
+
+function coberturas_post_type() {
+	$labels = array(
+		'name'               => __('Coberturas'),
+		'singular_name'      => __('Cobertura'),
+		'menu_name'          => __('Coberturas'),
+		'name_admin_bar'     => __('Coberturas'),
+		'add_new'            => __('Novas coberturas'),
+		'add_new_item'       => __('Adicionar nova cobertura'),
+		'new_item'           => __('Nova cobertura'),
+		'edit_item'          => __('Editar cobertura'),
+		'view_item'          => __('Visualizar cobertura'),
+		'all_items'          => __('Todas as coberturas'),
+		'search_items'       => __('Localizar cobertura'),
+		'not_found'          => __('Nenhum cobertura encontrado'),
+		'not_found_in_trash' => __('Nenhum cobertura encontrada na lixeira')
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __('Descrição'),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'coberturas' ),
+		'show_in_rest'       => true,
+		'rest_base'          => 'coberturas',
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 7,
+		'menu_icon'          => 'dashicons-admin-users',
+		'supports'           => array('title', 'editor')
+	);
+	register_post_type( 'coberturas', $args);
+}
+add_action( 'init', 'coberturas_post_type' );
+
+function seguradora_post_type() {
+	$labels = array(
+		'name'               => __('Seguradora'),
+		'singular_name'      => __('Seguradora'),
+		'menu_name'          => __('Seguradora'),
+		'name_admin_bar'     => __('Seguradora'),
+		'add_new'            => __('Nova seguradora'),
+		'add_new_item'       => __('Adicionar nova seguradora'),
+		'new_item'           => __('Nova seguradora'),
+		'edit_item'          => __('Editar seguradora'),
+		'view_item'          => __('Visualizar seguradora'),
+		'all_items'          => __('Todos os Registros'),
+		'search_items'       => __('Localizar Registro'),
+		'not_found'          => __('Nenhum Registro Encontrado'),
+		'not_found_in_trash' => __('Nenhum Registro encontrado na lixeira')
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __('Descrição'),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'Seguradora' ),
+		'show_in_rest'       => true,
+		'rest_base'          => 'Seguradora',
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 4,
+		'menu_icon'          => 'dashicons-admin-site',
+		'supports'           => array('title', 'editor')
+	);
+	register_post_type( 'seguradora', $args);
+}
+add_action( 'init', 'seguradora_post_type' );
+
+function sorteios_post_type() {
+	$labels = array(
+		'name'               => __('Sorteios'),
+		'singular_name'      => __('Sorteio'),
+		'menu_name'          => __('Sorteios'),
+		'name_admin_bar'     => __('Sorteios'),
+		'add_new'            => __('Novo sorteio'),
+		'add_new_item'       => __('Adicionar novo sorteio'),
+		'new_item'           => __('Novo sorteio'),
+		'edit_item'          => __('Editar sorteio'),
+		'view_item'          => __('Visualizar sorteio'),
+		'all_items'          => __('Todos os sorteios'),
+		'search_items'       => __('Localizar sorteio'),
+		'not_found'          => __('Nenhum sorteio encontrado'),
+		'not_found_in_trash' => __('Nenhum sorteio encontrado na lixeira')
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __('Descrição'),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'sorteios' ),
+		'show_in_rest'       => true,
+		'rest_base'          => 'sorteios',
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 4,
+		'menu_icon'          => 'dashicons-book-alt',
+		'supports'           => false
+	);
+	register_post_type( 'sorteios', $args);
+}
+add_action( 'init', 'sorteios_post_type' );
+
+function videos_post_type() {
+	$labels = array(
+		'name'               => __('Vídeos'),
+		'singular_name'      => __('Vídeo'),
+		'menu_name'          => __('Vídeos'),
+		'name_admin_bar'     => __('Vídeos'),
+		'add_new'            => __('Novo Vídeo'),
+		'add_new_item'       => __('Adicionar novo Vídeo'),
+		'new_item'           => __('Novo Vídeo'),
+		'edit_item'          => __('Editar Vídeos'),
+		'view_item'          => __('Visualizar Vídeos'),
+		'all_items'          => __('Todos os Vídeos'),
+		'search_items'       => __('Localizar Vídeo'),
+		'not_found'          => __('Nenhum Vídeo Encontrado'),
+		'not_found_in_trash' => __('Nenhum Vídeo encontrado na lixeira')
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __('Descrição'),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'videos' ),
+		'show_in_rest'       => true,
+		'rest_base'          => 'videos',
+		'capability_type'    => 'page',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 4,
+		'menu_icon'          => 'dashicons-video-alt2',
+		'supports'           => array('title')
+	);
+	register_post_type( 'videos', $args);
+}
+add_action( 'init', 'videos_post_type' );
+
+function observatorio_post_type() {
+	$labels = array(
+		'name'               => __('Observatório'),
+		'singular_name'      => __('Observatório'),
+		'menu_name'          => __('Observatório'),
+		'name_admin_bar'     => __('Observatório'),
+		'add_new'            => __('Nova Publicação'),
+		'add_new_item'       => __('Adicionar nova Publicação'),
+		'new_item'           => __('Nova Publicação'),
+		'edit_item'          => __('Editar Publicação'),
+		'view_item'          => __('Visualizar Publicação'),
+		'all_items'          => __('Todos as Publicações'),
+		'search_items'       => __('Localizar Publicação'),
+		'not_found'          => __('Nenhuma Publicação Encontrada'),
+		'not_found_in_trash' => __('Nenhuma Publicação encontrada na lixeira')
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __('Descrição'),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'observatorio' ),
+		'show_in_rest'       => true,
+		'rest_base'          => 'observatorio',
+		'capability_type'    => 'page',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 4,
+		'menu_icon'          => 'dashicons-format-status',
+		'supports'           => array('title', 'editor')
+	);
+	register_post_type( 'observatorio', $args);
+}
+add_action( 'init', 'observatorio_post_type' );
