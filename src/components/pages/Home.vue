@@ -1,5 +1,5 @@
 <template>
-    <div class="container vh-100 mb-5">
+    <div class="container container-home mb-5">
         <div class="row mb-2">
             <div class="col-7 mr-4">
                 <div class="topicos">

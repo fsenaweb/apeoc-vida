@@ -16,8 +16,6 @@
                 default: 'text-black'
             }
         }
-
-
     }
 </script>
 
