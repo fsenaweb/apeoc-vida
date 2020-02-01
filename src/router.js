@@ -10,6 +10,7 @@ import Cancer from "./components/pages/coberturas/Cancer";
 import Funeral from "./components/pages/coberturas/Funeral";
 import Sorteio from "./components/pages/coberturas/Sorteio";
 import Seguradora from "./components/pages/Seguradora";
+import Sorteios from "./components/pages/Sorteios";
 
 Vue.use(VueRouter)
 
@@ -26,6 +27,10 @@ const router = new VueRouter({
         {
             path: '/seguradora',
             component: Seguradora
+        },
+        {
+            path: '/sorteios',
+            component: Sorteios
         },
         {
             name: 'Coberturas',

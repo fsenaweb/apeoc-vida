@@ -39,7 +39,7 @@
                         <router-link to="/seguradora" tag="a" class="nav-link" href="#">SEGURADORA</router-link>
                     </li>
                     <li class="nav-item link-menu">
-                        <a class="nav-link" href="#">SORTEIOS</a>
+                        <router-link to="/sorteios" tag="a" class="nav-link" href="#">SORTEIOS</router-link>
                     </li>
                     <li class="nav-item link-menu">
                         <a class="nav-link" href="#">CONTATOS</a>
