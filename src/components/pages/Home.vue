@@ -2,15 +2,14 @@
     <div>
         <div class="container container-home mb-5">
             <div class="row mb-2">
-                <div class="col-7 mr-4">
+                <div class="col-7 mr-4 ml-4">
                     <div class="topicos">
                         <h1> [ Informativo ] </h1>
                     </div>
                     <div class="noticias">
-                        <img src="http://lorempixel.com/740/480/sports" class="img-fluid" alt="">
-                        <div class="titulo p-3">
-                            <h4>Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí
-                                cumpadi</h4>
+                        <img :src="infoPrincipal.acf.imagem.url" class="img-fluid" alt="">
+                        <div class="titulo p-2">
+                            <router-link :to="`/informativo/${infoPrincipal.slug}`" tag="a" class="nav-link" href="#">{{ infoPrincipal.title.rendered }}</router-link>
                         </div>
                     </div>
                 </div>
@@ -36,33 +35,27 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <div class="col-7 mr-4">
-                    <div class="row mt-3 pl-1">
+                <div class="col-7 mr-4 ml-4">
+                    <div class="row mt-2 pl-1">
                         <div class="col-6">
                             <div class="noticias-sub">
-                                <img src="http://lorempixel.com/335/180/sports" class="img-fluid" alt="">
-                                <div class="titulo p-1">
-                                    <div>Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma
-                                        pinga aí
-                                        cumpadi
-                                    </div>
+                                <img :src="infoSecundario.acf.imagem.url" class="img-fluid" alt="" />
+                                <div class="titulo">
+                                    <router-link :to="`/informativo/${infoSecundario.slug}`" tag="a" class="nav-link" href="#">{{ infoSecundario.title.rendered }}</router-link>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="noticias-sub">
-                                <img src="http://lorempixel.com/335/180/sports" class="img-fluid" alt="">
-                                <div class="titulo p-1">
-                                    <div>Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma
-                                        pinga aí
-                                        cumpadi
-                                    </div>
+                                <img :src="infoTerceiro.acf.imagem.url" class="img-fluid" alt="">
+                                <div class="titulo">
+                                    <router-link :to="`/informativo/${infoTerceiro.slug}`" tag="a" class="nav-link" href="#">{{ infoTerceiro.title.rendered }}</router-link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4 mt-2">
                     <Phone/>
                 </div>
             </div>
@@ -97,16 +90,27 @@
         },
         data () {
             return {
-                sorteio: {}
+                sorteio: {},
+                infoPrincipal: [],
+                infoSecundario: [],
+                infoTerceiro: []
             }
         },
         created() {
             this.getResultados()
+            this.getInformativo()
         },
         methods: {
             getResultados() {
                 api.get('sorteios?posts_per_page=1').then(response => {
                     this.sorteio = response.data[0].acf
+                })
+            },
+            getInformativo() {
+                api.get('posts').then(response => {
+                    this.infoPrincipal = response.data[0]
+                    this.infoSecundario = response.data[1]
+                    this.infoTerceiro = response.data[2]
                 })
             }
         }

@@ -12,6 +12,7 @@ import Sorteio from "./components/pages/coberturas/Sorteio";
 import Seguradora from "./components/pages/Seguradora";
 import Sorteios from "./components/pages/Sorteios";
 import Contatos from "./components/pages/Contatos";
+import Visualizar from "./components/pages/informativo/Visualizar";
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,10 @@ const router = new VueRouter({
         {
             path: '/produto',
             component: Produto
+        },
+        {
+            path: '/informativo/:slug',
+            component: Visualizar
         },
         {
             path: '/seguradora',

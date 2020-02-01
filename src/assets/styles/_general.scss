@@ -34,7 +34,7 @@ html, body {
 
     &:nth-child(2) > img {
       margin-top: -35px;
-      margin-left: -17px;
+      margin-left: -1px;
       position: relative;
       z-index: 100;
     }
@@ -44,7 +44,7 @@ html, body {
     }
 
     &:nth-child(2){
-      margin-right: -35px;
+      max-width: 80%;
     }
 
     .texto-marketing-left {
@@ -148,12 +148,23 @@ html, body {
     position: absolute;
     z-index: 999;
     letter-spacing: -0.5px;
+
+    a {
+      color: #000;
+      font-size: 1.5em;
+      line-height: 1.1em;
+      transition: color .2s linear;
+
+      &:hover {
+        color: #f20000
+      }
+    }
   }
 }
 
 .noticias-sub {
   width: 95%;
-  height: 80%;
+  height: 90%;
   position: relative;
   z-index: 10;
 
@@ -166,7 +177,7 @@ html, body {
 
   & > .titulo {
     width: 100%;
-    height: 40px;
+    height: 50px;
     font-size: 80%;
     font-weight: bolder;
     line-height: 0.9rem;
@@ -176,5 +187,16 @@ html, body {
     position: absolute;
     z-index: 999;
     letter-spacing: -0.5px;
+
+    a {
+      color: #000;
+      font-size: 1.1em;
+      line-height: 1.1em;
+      transition: color .2s linear;
+
+      &:hover {
+        color: #f20000
+      }
+    }
   }
 }

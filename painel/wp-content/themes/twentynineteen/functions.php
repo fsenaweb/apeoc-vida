@@ -399,7 +399,7 @@ function produtos_post_type() {
 		'hierarchical'       => false,
 		'menu_position'      => 6,
 		'menu_icon'          => 'dashicons-format-aside',
-		'supports'           => array('editor')
+		'supports'           => array('title','editor')
 	);
 	register_post_type( 'produtos', $args);
 }
