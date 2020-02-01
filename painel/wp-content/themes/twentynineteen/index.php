@@ -14,8 +14,6 @@
  * @since 1.0.0
  */
 
-header('Location: http://www.ainpgp.net/painel/wp-admin/');
-
 get_header();
 ?>
 
