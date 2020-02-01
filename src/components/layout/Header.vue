@@ -42,7 +42,7 @@
                         <router-link to="/sorteios" tag="a" class="nav-link" href="#">SORTEIOS</router-link>
                     </li>
                     <li class="nav-item link-menu">
-                        <a class="nav-link" href="#">CONTATOS</a>
+                        <router-link to="/contatos" tag="a" class="nav-link" href="#">CONTATOS</router-link>
                     </li>
                 </ul>
             </div>

@@ -334,6 +334,26 @@ function remove_footer_admin () {
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 
+//add_filter('acf/settings/show_admin', '__return_false');
+
+function remove_menus() {
+
+//	remove_menu_page( 'index.php' );                  //Dashboard
+	//remove_menu_page( 'edit.php' );                   //Posts
+	//remove_menu_page( 'upload.php' );                 //Media
+	remove_menu_page( 'edit.php?post_type=page' );    //Pages
+	remove_menu_page( 'edit-comments.php' );          //Comments
+	remove_menu_page( 'themes.php' );                 //Appearance
+	//remove_menu_page( 'plugins.php' );                //Plugins
+	//remove_menu_page( 'users.php' );                  //Users
+	//remove_menu_page( 'tools.php' );                  //Tools
+	//remove_menu_page( 'options-general.php' );        //Settings
+
+}
+
+add_action( 'admin_menu', 'remove_menus' );
+
+
 function remover_boxes() {
 	remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
 	remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
@@ -494,7 +514,7 @@ function sorteios_post_type() {
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
-		'menu_position'      => 4,
+		'menu_position'      => 2,
 		'menu_icon'          => 'dashicons-book-alt',
 		'supports'           => array('title')
 	);
@@ -502,21 +522,21 @@ function sorteios_post_type() {
 }
 add_action( 'init', 'sorteios_post_type' );
 
-function videos_post_type() {
+function contatos_post_type() {
 	$labels = array(
-		'name'               => __('Vídeos'),
-		'singular_name'      => __('Vídeo'),
-		'menu_name'          => __('Vídeos'),
-		'name_admin_bar'     => __('Vídeos'),
-		'add_new'            => __('Novo Vídeo'),
-		'add_new_item'       => __('Adicionar novo Vídeo'),
-		'new_item'           => __('Novo Vídeo'),
-		'edit_item'          => __('Editar Vídeos'),
-		'view_item'          => __('Visualizar Vídeos'),
-		'all_items'          => __('Todos os Vídeos'),
-		'search_items'       => __('Localizar Vídeo'),
-		'not_found'          => __('Nenhum Vídeo Encontrado'),
-		'not_found_in_trash' => __('Nenhum Vídeo encontrado na lixeira')
+		'name'               => __('Contatos'),
+		'singular_name'      => __('Contato'),
+		'menu_name'          => __('Contatos'),
+		'name_admin_bar'     => __('Contatos'),
+		'add_new'            => __('Novo contato'),
+		'add_new_item'       => __('Adicionar novo contato'),
+		'new_item'           => __('Novo contato'),
+		'edit_item'          => __('Editar contato'),
+		'view_item'          => __('Visualizar contato'),
+		'all_items'          => __('Todos os contatos'),
+		'search_items'       => __('Localizar contato'),
+		'not_found'          => __('Nenhum contato encontrado'),
+		'not_found_in_trash' => __('Nenhum contato encontrado na lixeira')
 	);
 
 	$args = array(
@@ -527,55 +547,16 @@ function videos_post_type() {
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'videos' ),
+		'rewrite'            => array( 'slug' => 'contatos' ),
 		'show_in_rest'       => true,
-		'rest_base'          => 'videos',
-		'capability_type'    => 'page',
+		'rest_base'          => 'contatos',
+		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
-		'menu_position'      => 4,
-		'menu_icon'          => 'dashicons-video-alt2',
-		'supports'           => array('title')
-	);
-	register_post_type( 'videos', $args);
-}
-add_action( 'init', 'videos_post_type' );
-
-function observatorio_post_type() {
-	$labels = array(
-		'name'               => __('Observatório'),
-		'singular_name'      => __('Observatório'),
-		'menu_name'          => __('Observatório'),
-		'name_admin_bar'     => __('Observatório'),
-		'add_new'            => __('Nova Publicação'),
-		'add_new_item'       => __('Adicionar nova Publicação'),
-		'new_item'           => __('Nova Publicação'),
-		'edit_item'          => __('Editar Publicação'),
-		'view_item'          => __('Visualizar Publicação'),
-		'all_items'          => __('Todos as Publicações'),
-		'search_items'       => __('Localizar Publicação'),
-		'not_found'          => __('Nenhuma Publicação Encontrada'),
-		'not_found_in_trash' => __('Nenhuma Publicação encontrada na lixeira')
-	);
-
-	$args = array(
-		'labels'             => $labels,
-		'description'        => __('Descrição'),
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'observatorio' ),
-		'show_in_rest'       => true,
-		'rest_base'          => 'observatorio',
-		'capability_type'    => 'page',
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'menu_position'      => 4,
-		'menu_icon'          => 'dashicons-format-status',
+		'menu_position'      => 2,
+		'menu_icon'          => 'dashicons-email',
 		'supports'           => array('title', 'editor')
 	);
-	register_post_type( 'observatorio', $args);
+	register_post_type( 'contatos', $args);
 }
-add_action( 'init', 'observatorio_post_type' );
+add_action( 'init', 'contatos_post_type' );

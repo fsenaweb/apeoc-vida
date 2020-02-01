@@ -11,6 +11,7 @@ import Funeral from "./components/pages/coberturas/Funeral";
 import Sorteio from "./components/pages/coberturas/Sorteio";
 import Seguradora from "./components/pages/Seguradora";
 import Sorteios from "./components/pages/Sorteios";
+import Contatos from "./components/pages/Contatos";
 
 Vue.use(VueRouter)
 
@@ -31,6 +32,9 @@ const router = new VueRouter({
         {
             path: '/sorteios',
             component: Sorteios
+        },{
+            path: '/contatos',
+            component: Contatos
         },
         {
             name: 'Coberturas',

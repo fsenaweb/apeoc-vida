@@ -1,7 +1,7 @@
 <template>
     <div class="container container-home mb-4">
         <div class="content-body container">
-            <h1> [ Produto ] </h1>
+            <h1> [ Contatos ] </h1>
             <div v-if="!content">
                 <h4>Nenhuma informação encontrada.</h4>
             </div>
@@ -16,14 +16,14 @@
     import {api} from "../../service/api";
 
     export default {
-        name: 'Produto',
+        name: 'Contatos',
         data () {
             return {
                 content: ''
             }
         },
         created () {
-            api.get('produtos').then(response => {
+            api.get('contatos').then(response => {
                 this.content = response.data[0].content.rendered
             })
         }
