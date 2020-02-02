@@ -2,7 +2,7 @@
     <div>
         <div class="container container-home mb-5">
             <div class="row mb-2">
-                <div class="col-7 mr-4 ml-4">
+                <div class="col-12 col-lg-7 mr-4 ml-1 ml-lg-4">
                     <div class="topicos">
                         <h1> [ Informativo ] </h1>
                     </div>
@@ -13,7 +13,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-lg-4">
                     <div class="topicos">
                         <h1> [ Sorteios ] </h1>
                     </div>
@@ -35,9 +35,9 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <div class="col-7 mr-4 ml-4">
-                    <div class="row mt-2 pl-1">
-                        <div class="col-6">
+                <div class="col-12 col-lg-7 mb-md-5 mr-4 ml-2 ml-md-2 ml-lg-4">
+                    <div class="row mt-3 pl-1">
+                        <div class="col-12 col-sm-6">
                             <div class="noticias-sub">
                                 <img :src="infoSecundario.acf.imagem.url" class="img-fluid" alt="" />
                                 <div class="titulo">
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             <div class="noticias-sub">
                                 <img :src="infoTerceiro.acf.imagem.url" class="img-fluid" alt="">
                                 <div class="titulo">
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mt-2">
+                <div class="col-12 col-lg-4 mt-3 d-none d-lg-block">
                     <Phone/>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="modal fade" :class="openModal.styleClass" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true" :style="openModal.style">
-        <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="container">

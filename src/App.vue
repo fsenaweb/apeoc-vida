@@ -20,4 +20,7 @@ export default {
 
 <style lang="scss">
   @import "assets/styles/index";
+  @import "node_modules/bootstrap/scss/functions";
+  @import "node_modules/bootstrap/scss/variables";
+  @import "node_modules/bootstrap/scss/mixins";
 </style>

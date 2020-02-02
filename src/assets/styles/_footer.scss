@@ -16,6 +16,16 @@
   padding: 5px;
   background-color: #FFF;
   border-radius: 15px;
+
+  @include media-breakpoint-down(md) {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    background-color: #FFF;
+    border-radius: 15px;
+  }
+
 }
 
 .copyright {
@@ -25,6 +35,7 @@
   padding-top: 10px;
   color: #FFF;
   background-color: #637825;
+
 }
 
 .fsenaweb {
@@ -46,5 +57,10 @@
       text-decoration: none;
       color: #273214;
     }
+  }
+
+  @include media-breakpoint-down(md) {
+    float: none;
+    text-align: center;
   }
 }

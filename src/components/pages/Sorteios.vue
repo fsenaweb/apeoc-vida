@@ -12,7 +12,7 @@
                 <div v-else>
                     <div class="row">
                         <ModalSorteio :data="resultado" :openModal="openModal" @fecharModal="fecharModal"/>
-                        <div class="col-3" v-for="(data, index) in content" :key="index">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-for="(data, index) in content" :key="index">
                             <div class="card mb-4">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Contemplado em {{ data.acf.data_sorteio}}</h5>

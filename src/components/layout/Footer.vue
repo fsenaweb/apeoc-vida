@@ -2,13 +2,13 @@
     <div class="footer mt-3">
         <div class="container mt-5">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12 col-sm-6 mb-5 mb-sm-0">
                     <div class="logo">
                         <img src="./../../assets/images/logo.jpg" alt=""/>
                     </div>
                     <Phone color="text-white"/>
                 </div>
-                <div class="col-5">
+                <div class="col-12 col-sm-5 mb-5 mb-sm-0">
                     <div class="text-center mb-3">
                         <img src="./../../assets/images/logo-apeoc.png" alt=""/>
                     </div>
@@ -21,11 +21,11 @@
         <div class="copyright">
             <div class="container">
                 <div class="row p-2">
-                    <div class="col-8 h5">
+                    <div class="col-12 col-sm-8 h5 text-center text-md-left">
                         &copy; APEOC-VIDA {{ new Date().getFullYear() }} | Todos os direitos reservados
                     </div>
-                    <div class="col-3 text-right ">
-                        <span class="fsenaweb ml-n5">
+                    <div class="col-12 col-sm-3 text-center text-md-right">
+                        <span class="fsenaweb ml-1 ml-sm-n5">
                         <a href="https://fsenaweb.me" target="_blank" rel="noopener noreferrer"
                            title="Especializado em desenvolver soluções web para o sucesso dos seus negócios">
                         fsenaweb</a>
