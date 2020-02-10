@@ -14,6 +14,8 @@
  * @since 1.0.0
  */
 
+header('Location: http://www.apeocvida.com.br/painel/wp-admin/');
+
 get_header();
 ?>
 

@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const api = axios.create({
-    baseURL: 'http://localhost:8000/wp-json/wp/v2/'
+    baseURL: 'http://apeocvida.com.br/painel/wp-json/wp/v2/'
 });
