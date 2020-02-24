@@ -17,7 +17,7 @@
                         </button>
 
                         <div class="navbar-collapse d-none">
-                            <ul class="nav float-right mt-3 mt-lg-0 mt-xl-2">
+                            <ul class="nav float-left mt-3 mt-lg-0 mt-xl-2" style="font-size: 93%">
                                 <li class="nav-item link-menu">
                                     <router-link to="/" class="nav-link active" href="#">HOME</router-link>
                                 </li>
@@ -31,24 +31,24 @@
                                     <div class="dropdown-menu" :class="{ show: isActive }">
                                         <router-link @click="openDropdown()" to="/coberturas/morte-qualquer-causa"
                                                      tag="a"
-                                                     class="dropdown-item text-uppercase font-weight-bold" href="#">
-                                            <span @click="openDropdown">Morte Qualquer causa</span>
+                                                     class="dropdown-item font-weight-bold" href="#">
+                                            <span @click="openDropdown">Morte qualquer causa</span>
                                         </router-link>
                                         <router-link to="/coberturas/invalidez" tag="a"
-                                                     class="dropdown-item text-uppercase font-weight-bold" href="#">
-                                            <span @click="openDropdown">Invalidez por Acidente</span>
+                                                     class="dropdown-item font-weight-bold" href="#">
+                                            <span @click="openDropdown">Invalidez por acidente</span>
                                         </router-link>
                                         <router-link to="/coberturas/cancer" tag="a"
-                                                     class="dropdown-item text-uppercase font-weight-bold" href="#">
-                                            <span @click="openDropdown">Diagnóstico de Câncer</span>
+                                                     class="dropdown-item font-weight-bold" href="#">
+                                            <span @click="openDropdown">Diagnóstico de câncer</span>
                                         </router-link>
                                         <router-link to="/coberturas/funeral" tag="a"
-                                                     class="dropdown-item text-uppercase font-weight-bold" href="#">
-                                            <span @click="openDropdown">Assistência Funeral Familiar</span>
+                                                     class="dropdown-item font-weight-bold" href="#">
+                                            <span @click="openDropdown">Assistência funeral familiar</span>
                                         </router-link>
                                         <router-link to="/coberturas/sorteio" tag="a"
-                                                     class="dropdown-item text-uppercase font-weight-bold" href="#">
-                                            <span @click="openDropdown">Sorteio Semanal</span>
+                                                     class="dropdown-item font-weight-bold" href="#">
+                                            <span @click="openDropdown">Sorteio semanal</span>
                                         </router-link>
                                     </div>
                                 </li>

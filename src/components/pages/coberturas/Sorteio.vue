@@ -1,12 +1,12 @@
 <template>
     <div>
         <div v-if="!content">
-            <h1> [ Coberturas ] <small></small> </h1>
+            <h1> <small></small> </h1>
             <h4>Nenhuma informação encontrada.</h4>
         </div>
         <div v-else>
-            <h1> [ Coberturas ] <small>{{ content.title.rendered }}</small> </h1>
-            <h4 v-html="content.content.rendered" />
+            <h1> <small>{{ content.title.rendered }}</small> </h1>
+            <h4 v-html="content.content.rendered" class="content-coberturas" />
         </div>
     </div>
 </template>
@@ -40,7 +40,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>

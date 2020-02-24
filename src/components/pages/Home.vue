@@ -3,9 +3,6 @@
         <div class="container container-home mb-5">
             <div class="row mb-2">
                 <div class="col-12 col-lg-7 mr-4 ml-1 ml-lg-4">
-                    <div class="topicos">
-                        <h1> [ Informativo ] </h1>
-                    </div>
                     <div class="noticias">
                         <img :src="infoPrincipal.acf.imagem.url" class="img-fluid" alt="">
                         <div class="titulo p-2">
@@ -14,9 +11,6 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <div class="topicos">
-                        <h1> [ Sorteios ] </h1>
-                    </div>
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title h2 mb-3">Sorteio Semanal</h5>
@@ -55,8 +49,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4 mt-3 d-none d-lg-block">
-                    <Phone/>
+                <div class="col-12 col-lg-4 mt-4 d-none d-lg-block text-center">
+                    <a href="https://apeoc.org.br/" target="_blank" rel="noreferrer noopener"><img src="./../../assets/images/link-apeoc.png" class="img-fluid ml-3" alt="Logo APEOC-VIDA" width="270"></a>
                 </div>
             </div>
         </div>
@@ -80,14 +74,10 @@
 </template>
 
 <script>
-    import Phone from '@/components/utils/Phone'
     import { api} from "../../service/api";
 
     export default {
         name: 'Home',
-        components: {
-            Phone
-        },
         data () {
             return {
                 sorteio: {},
