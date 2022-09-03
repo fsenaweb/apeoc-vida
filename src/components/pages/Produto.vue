@@ -6,7 +6,7 @@
                 <h4>Nenhuma informação encontrada.</h4>
             </div>
             <div v-else>
-                <h4 v-html="content"/>
+                <div v-html="content"/>
             </div>
         </div>
     </div>

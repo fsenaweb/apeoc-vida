@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-12 col-sm-3 text-center text-md-right">
                         <span class="fsenaweb ml-1 ml-sm-n5">
-                        <a href="https://fsenaweb.me" target="_blank" rel="noopener noreferrer"
+                        <a href="https://fsenaweb.dev" target="_blank" rel="noopener noreferrer"
                            title="Especializado em desenvolver soluções web para o sucesso dos seus negócios">
                         fsenaweb</a>
                     </span>
